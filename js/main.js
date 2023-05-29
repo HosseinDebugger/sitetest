@@ -112,7 +112,7 @@ function NavbarFunc() {
 
 //  service -item
 
-// serviceItem.addEventListener('click', ShowModalFunc)
+serviceItem.addEventListener('click', ShowModalFunc)
 closeModal.addEventListener('click', CloseModalFunc)
 
 function ShowModalFunc() {
@@ -134,21 +134,52 @@ function CloseModalFunc() {
 
 //  about -btb
 
-
-
+// about btn 
+let aboutusbtn = document.getElementById("callforme")
 aboutbtn.addEventListener('click', () => {
 
-    aboutbtn.style.width = '500px'
-    aboutbtn.innerHTML = '@telegram   0299343434  dfsdf'
+    aboutbtn.style.display = 'none'
+    aboutusbtn.style.display = 'block'
 
+
+})
+
+
+aboutusbtn.addEventListener('click', () => {
+    alert('کپی شد ')
+    window.navigator.clipboard.writeText(aboutusbtn.firstElementChild.innerHTML)
+    aboutbtn.style.display = 'block'
+    aboutusbtn.style.display = 'none'
 
 })
 
 
 
 
-import { examples } from '../component/components.js';
 
 
 
-window.customElements.define('dfcs-ew', examples)
+
+
+
+
+
+
+//content
+let content = document.getElementById('contact-desc')
+
+
+
+
+window.document.addEventListener('scroll', (event) => {
+    console.log(window.pageYOffset);
+    if (window.pageYOffset > 3000) {
+
+        content.style.display = 'block'
+        content.style.animation = ' test23 8    s '
+
+    } else {
+        content.style.display = 'none'
+
+    }
+})
