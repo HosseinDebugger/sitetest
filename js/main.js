@@ -2,17 +2,17 @@ let index = 0;
 const items = $('.work-item').length;
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
 
-    $(".work-item-inner").click(function () {
+    $(".work-item-inner").click(function() {
         index = $(this).parent(".work-item").index();
         $('.lightbox').addClass('open');
         lightBoxSlideShow();
 
     });
 
-    $('.lightbox-control .prev').click(function () {
+    $('.lightbox-control .prev').click(function() {
         if (index == 0) {
             index = items - 1;
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
         lightBoxSlideShow();
     })
 
-    $('.lightbox-control .next').click(function () {
+    $('.lightbox-control .next').click(function() {
         if (index == items - 1) {
             index = 0;
         } else {
@@ -33,11 +33,11 @@ $(document).ready(function () {
     })
 
 
-    $('.close').click(function () {
+    $('.close').click(function() {
         $('.lightbox').removeClass('open')
     })
 
-    $('.lightbox').click(function (event) {
+    $('.lightbox').click(function(event) {
         if ($(event.target).hasClass('lightbox')) {
             $(this).removeClass('open')
         }
@@ -63,12 +63,12 @@ $(document).ready(function () {
 let navbar = document.getElementById('navbar')
 let aboutCount = document.querySelector('.about-content')
 let service = document.querySelector('.service')
-let serviceItem=document.getElementById('service-item')
-let serviceModal=document.getElementById('service-modal')
-let closeModal=document.getElementById('close-modal')
+let serviceItem = document.getElementById('service-item')
+let serviceModal = document.getElementById('service-modal')
+let closeModal = document.getElementById('close-modal')
 let workitem = document.querySelector('.work-item-inner')
 let ccontentDesc = document.querySelector('.contact')
-let aboutbtn=document.getElementById('aboutbtn')
+let aboutbtn = document.getElementById('aboutbtn')
 
 navbar.addEventListener('click', NavbarFunc)
 
@@ -112,34 +112,34 @@ function NavbarFunc() {
 
 //  service -item
 
-serviceItem.addEventListener('click',ShowModalFunc)
-closeModal.addEventListener('click',CloseModalFunc)
+// serviceItem.addEventListener('click', ShowModalFunc)
+closeModal.addEventListener('click', CloseModalFunc)
 
 function ShowModalFunc() {
-let screenSize=window.screen.width
-console.log(screenSize);
-if (window.screen.width==363) {
-    
-}else{
-    serviceModal.style.display='block'
+    let screenSize = window.screen.width
+    console.log(screenSize);
+    if (window.screen.width == 363) {
+
+    } else {
+        serviceModal.style.display = 'block'
+
+    }
 
 }
 
-  }
+function CloseModalFunc() {
+    serviceModal.style.display = 'none'
 
-  function CloseModalFunc() {  
-    serviceModal.style.display='none'
-
-  }
+}
 
 //  about -btb
 
 
 
-aboutbtn.addEventListener('click',()=>{
+aboutbtn.addEventListener('click', () => {
 
-aboutbtn.style.width='500px'
-aboutbtn.innerHTML='@telegram   0299343434  dfsdf'
+    aboutbtn.style.width = '500px'
+    aboutbtn.innerHTML = '@telegram   0299343434  dfsdf'
 
 
 })
@@ -147,5 +147,8 @@ aboutbtn.innerHTML='@telegram   0299343434  dfsdf'
 
 
 
+import { examples } from '../component/components.js';
 
 
+
+window.customElements.define('dfcs-ew', examples)
